@@ -6,22 +6,7 @@ const USDorEUR = "EUR"  // Your preferred currency to show values EUR or USD
 // Use Fake Data for Preview or use data from widgetParameter input
 let widgetInput
 if (config.runsInApp) {
-    widgetInput = '[ {"Currency":"BTC", "Amount":"0.4990601", "Invest":"600"},' +
-        '{"Currency":"ETH", "Amount":"0.45801971", "Invest":"275"},' +
-        '{"Currency":"DOT", "Amount":"788.95390707", "Invest":"20000"},' +
-        '{"Currency":"ADA", "Amount": "137.954223", "Invest":"100"},' +
-        '{"Currency":"YFI", "Amount": "0.2251496", "Invest":"100"},' +
-        '{"Currency":"XRP", "Amount": "447.7493", "Invest":"305.44"},' +
-        '{"Currency":"ZRX", "Amount": "2480.11194", "Invest":"4000"},' +
-        '{"Currency":"BNT", "Amount": "14.97", "Invest":"25"},' +
-        '{"Currency":"MDCL", "Amount": "425", "Invest":"50"},' +
-        '{"Currency":"LSK", "Amount": "159.99545634", "Invest":"300"},' +
-        '{"Currency":"TKN", "Amount": "27.11", "Invest":"15"},' +
-        '{"Currency":"AMPL", "Amount": "251.70", "Invest":"250"},' +
-        '{"Currency":"INT", "Amount": "5490.59", "Invest":"100"},' +
-        '{"Currency":"SPK", "Amount": "66.88", "Invest":"33.44"},' +
-        '{"Currency":"FUN", "Amount": "382.5515", "Invest":"40.44"},' +
-        '{"Currency":"MIOTA", "Amount": "3.21", "Invest":"10"}]';
+    widgetInput = '[ {"Currency":"BTC", "Amount":"28.00177863", "Invest":"19040"} ]';
 } else {
     widgetInput = args.widgetParameter;}
 
