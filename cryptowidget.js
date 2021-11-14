@@ -40,7 +40,7 @@ const ENV = {// Define colors and other parameters:
     "spacing": 5, // SPACING BETWEEN LIST ITEMS IN LARGE WIDGET
     "headerspacing": 3, // SPACING BETWEEN HEADER AND LIST IN LARGE WIDGET
     "num_rows": 4, // HOW MANY COINS SHOULD BE DISPLAYED VERTICALLY IN MEDIUM WIDGET
-    "preview": "medium" // PREVIEW OF WIDGET IN APP (SMALL, MEDIUM or LARGE)
+    "preview": "small" // PREVIEW OF WIDGET IN APP (SMALL, MEDIUM or LARGE)
 }
 
 // Check if input is correct
@@ -166,12 +166,12 @@ async function createWidget(data, total) {
                 const row = frame.addStack();
                 row.layoutHorizontally();
                 row.addSpacer(1)
-                text(row, '₿ ', 14, "gold")
+                  text(row, '₿ ', 14, "gold")
                 text(row, 'Bitcoin', 14, "normal")
                 text(row, ' Guthaben', 14, "normal")
                 row.addSpacer(2)
             }
-            frame.addSpacer(20)
+            frame.addSpacer(10)
             {// MIDDLE #########################################################
                 let col = frame.addStack();
                 col.layoutVertically()
@@ -184,6 +184,12 @@ async function createWidget(data, total) {
                         "green")
                 }
                 col.addSpacer(6)
+                {
+                  let row = col.addStack();
+                  col.layoutVertically()
+                  text(col, "BTC: 28.00177863", 14, "normal")
+}
+
              
                 col.addSpacer(6)
                 {// INVEST AND PROFIT
