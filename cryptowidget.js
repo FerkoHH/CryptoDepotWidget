@@ -166,8 +166,8 @@ async function createWidget(data, total) {
                 const row = frame.addStack();
                 row.layoutHorizontally();
                 row.addSpacer(1)
-                  text(row, '₿ ', 14, "gold")
-                text(row, 'Bitcoin ', 14, "normal")
+                text(row, '₿ ', 14, "gold")
+                text(row, 'Bitcoin', 14, "normal")
                 text(row, ' Guthaben', 14, "normal")
                 row.addSpacer(2)
             }
