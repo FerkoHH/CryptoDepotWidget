@@ -27,8 +27,8 @@ if (config.runsInApp) {
 
 const ENV = {// Define colors and other parameters:
     "colors": {
-        "bg": Color.dynamic(new Color('#FFFFFF'), new Color('#111111')),
-        "normal": Color.dynamic(new Color('#111111'), new Color('#FFFFFF')),
+        "bg": Color.dynamic(new Color('#282828'), new Color('#282828')),
+        "normal": Color.dynamic(new Color('#FFFFFF'), new Color('#FFFFFF')),
         "red": Color.dynamic(new Color('#FF0000'), new Color('#FF0000')),
         "green": Color.dynamic(new Color('#00FF00'), new Color('#00FF00')),
         "blue": Color.dynamic(new Color('#0000FF'), new Color('#0000FF')),
