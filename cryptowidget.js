@@ -28,7 +28,7 @@ if (config.runsInApp) {
 const ENV = {// Define colors and other parameters:
     "colors": {
         "bg": Color.dynamic(new Color('#282828'), new Color('#282828')),
-        "normal": Color.dynamic(new Color('#FFFFFF'), new Color('#FFFFFF')),
+        "normal": Color.dynamic(new Color('#FFF'), new Color('#FFFFFF')),
         "red": Color.dynamic(new Color('#FF0000'), new Color('#FF0000')),
         "green": Color.dynamic(new Color('#00FF00'), new Color('#00FF00')),
         "blue": Color.dynamic(new Color('#0000FF'), new Color('#0000FF')),
@@ -191,7 +191,7 @@ async function createWidget(data, total) {
 }
 
              
-                col.addSpacer(6)
+                col.addSpacer(10)
                 {// INVEST AND PROFIT
                     let row = col.addStack();
                     row.layoutHorizontally()
@@ -202,7 +202,8 @@ async function createWidget(data, total) {
                             NumD.format(total.invest),
                             8,
                             "normal")
-                        col.addSpacer(1)
+                            text(col, '679,96 € / BTC', 8, "normal")
+                        col.addSpacer(5)
                         text(col,
                             "INVESTMENT",
                             8,
@@ -216,7 +217,9 @@ async function createWidget(data, total) {
                             Per.formatWithSign(total.pctprofit),
                             8,
                             "green")
-                        col.addSpacer(1)
+                            text(col, '', 8, "normal")
+                        col.addSpacer(0)
+                        
                         text(col,
                             "GEWINN",
                             8,
