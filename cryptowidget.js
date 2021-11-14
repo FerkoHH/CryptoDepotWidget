@@ -91,7 +91,6 @@ total['profit'] = dataarray.reduce((prev, next) => prev + next['PROFIT'], 0)
 total['pctprofit'] = total['profit'] / total['invest']
 total['c24h'] = dataarray.reduce((prev, next) => prev + next['VALUECHANGE24HOUR'], 0)
 total['pct24h'] = total['c24h'] / total['value']
-total['price'] = // JUST NEED THE BTC PRICE HERE TO OUTPUT AT LINE 223
 
 function sort_filter(data, sort) {
     // Sort coins according to PROFITPCT
@@ -220,7 +219,7 @@ async function createWidget(data, total) {
                             "green")
                             text(col, '', 8, "normal")
                         col.addSpacer(0)
-                        text(col, Num.format(data[i]['PRICE']), 8, "normal") // OUTPUT BTC PRICE HERE
+                        text(col, Num.format(data.filter(x=> x["FROMSYMBOL"] == "BTC")[0]["PRICE"]), 8, "normal")
                         text(col,
                             "GEWINN",
                             8,
