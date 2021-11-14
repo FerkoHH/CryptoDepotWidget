@@ -6,7 +6,22 @@ const USDorEUR = "EUR"  // Your preferred currency to show values EUR or USD
 // Use Fake Data for Preview or use data from widgetParameter input
 let widgetInput
 if (config.runsInApp) {
-    widgetInput = '[ {"Currency":"BTC", "Amount":"28.00177863", "Invest":"19040"} ]';
+    widgetInput = '[ {"Currency":"BTC", "Amount":"0.4990601", "Invest":"600"},' +
+        '{"Currency":"ETH", "Amount":"0.45801971", "Invest":"275"},' +
+        '{"Currency":"DOT", "Amount":"788.95390707", "Invest":"20000"},' +
+        '{"Currency":"ADA", "Amount": "137.954223", "Invest":"100"},' +
+        '{"Currency":"YFI", "Amount": "0.2251496", "Invest":"100"},' +
+        '{"Currency":"XRP", "Amount": "447.7493", "Invest":"305.44"},' +
+        '{"Currency":"ZRX", "Amount": "2480.11194", "Invest":"4000"},' +
+        '{"Currency":"BNT", "Amount": "14.97", "Invest":"25"},' +
+        '{"Currency":"MDCL", "Amount": "425", "Invest":"50"},' +
+        '{"Currency":"LSK", "Amount": "159.99545634", "Invest":"300"},' +
+        '{"Currency":"TKN", "Amount": "27.11", "Invest":"15"},' +
+        '{"Currency":"AMPL", "Amount": "251.70", "Invest":"250"},' +
+        '{"Currency":"INT", "Amount": "5490.59", "Invest":"100"},' +
+        '{"Currency":"SPK", "Amount": "66.88", "Invest":"33.44"},' +
+        '{"Currency":"FUN", "Amount": "382.5515", "Invest":"40.44"},' +
+        '{"Currency":"MIOTA", "Amount": "3.21", "Invest":"10"}]';
 } else {
     widgetInput = args.widgetParameter;}
 
@@ -150,14 +165,13 @@ async function createWidget(data, total) {
                 // Title
                 const row = frame.addStack();
                 row.layoutHorizontally();
-                row.addSpacer(2)
-                text(row, '💰C', 14, "gold")
-                text(row, 'rypto', 14, "normal")
-                text(row, 'D', 14, "gold")
-                text(row, 'epot💰', 14, "normal")
+                row.addSpacer(1)
+                  text(row, '₿ ', 14, "gold")
+                text(row, 'Bitcoin ', 14, "normal")
+                text(row, ' Guthaben', 14, "normal")
                 row.addSpacer(2)
             }
-            frame.addSpacer(10)
+            frame.addSpacer(20)
             {// MIDDLE #########################################################
                 let col = frame.addStack();
                 col.layoutVertically()
@@ -167,45 +181,10 @@ async function createWidget(data, total) {
                     text(row,
                         Num.format(total.value),
                         21,
-                        "normal")
+                        "green")
                 }
                 col.addSpacer(6)
-                {//CHANGE 24H
-                    let row = col.addStack();
-                    row.layoutHorizontally()
-                    image(row,
-                        (total.pct24h >= 0) ? "arrow.up.forward.circle.fill" : "arrow.down.forward.circle.fill",
-                        32,
-                        ((total.pct24h >= 0) ? "green" : "red"))
-                    row.addSpacer(2)
-                    {// Texts
-                        let col = row.addStack();
-                        col.layoutVertically()
-                        text(col,
-                            Num.formatWithSign(total.c24h),
-                            14,
-                            ((total.pct24h >= 0) ? "green" : "red"))
-                        col.addSpacer(2)
-                        text(col,
-                            Per.formatWithSign(total.pct24h),
-                            8,
-                            ((total.pct24h >= 0) ? "green" : "red"))
-                    }
-                    row.addSpacer(2)
-                    {//24H Symbol
-                        let col = row.addStack();
-                        col.layoutVertically()
-                        image(col,
-                            "clock.arrow.circlepath",
-                            20,
-                            "normal")
-                        col.addSpacer(1)
-                        text(col,
-                            "24H",
-                            9,
-                            "normal")
-                    }
-                }
+             
                 col.addSpacer(6)
                 {// INVEST AND PROFIT
                     let row = col.addStack();
@@ -230,21 +209,21 @@ async function createWidget(data, total) {
                         text(col,
                             Per.formatWithSign(total.pctprofit),
                             8,
-                            "normal")
+                            "green")
                         col.addSpacer(1)
                         text(col,
-                            "PROFIT",
+                            "GEWINN",
                             8,
                             "normal")
                     }
                 }
             }
-            frame.addSpacer(3)
+            frame.addSpacer(20)
             {// BOTTOM #########################################################
                 {// Last updated timestamp
                     let row = frame.addStack();
                     row.layoutHorizontally();
-                    row.addSpacer(25)
+                    row.addSpacer(0)
                     text(row,
                         `${('' + date.getDate()).padStart(2, '0')}.${('' + (date.getMonth() + 1)).padStart(2, '0')}.${date.getFullYear()} ${('' + date.getHours()).padStart(2, '0')}:${('' + date.getMinutes()).padStart(2, '0')}`,
                         8,
